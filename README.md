@@ -1,2 +1,2 @@
-# Example
-An example greeter plugin
+# Fire Max Cape Removal
+Hides players wearing fire max capes
