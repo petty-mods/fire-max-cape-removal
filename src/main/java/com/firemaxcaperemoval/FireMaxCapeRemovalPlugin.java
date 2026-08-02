@@ -100,7 +100,6 @@ public class FireMaxCapeRemovalPlugin extends Plugin
 
 			// Replace cape slot with a fire cape if player is wearing a fire max cape.
 			equipmentIds[KitType.CAPE.getIndex()] = (FIRE_CAPE_ITEM_ID) + ITEM_OFFSET;
-			System.out.println(equipmentIds[KitType.CAPE.getIndex()]);
 		}
 
 		// Force RuneLite/the client to recalculate and redraw the modified player model
