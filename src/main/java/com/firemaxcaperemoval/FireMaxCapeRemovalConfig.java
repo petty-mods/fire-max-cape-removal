@@ -10,7 +10,7 @@ public interface FireMaxCapeRemovalConfig extends Config
 	@ConfigItem(
 			keyName = "enabled",
 			name = "Enabled",
-			description = "Hide other players if they are wearing a fire max cape."
+			description = "Replaces fire max capes with regular fire capes."
 	)
 	default boolean enabled()
 	{
@@ -18,42 +18,42 @@ public interface FireMaxCapeRemovalConfig extends Config
 	}
 
 	@ConfigItem(
-			keyName = "hideSelfIfWearing",
-			name = "Hide me if wearing fire max cape",
-			description = "If enabled, your own player will be hidden when you are wearing a fire max cape. You should burn that cape, too."
+			keyName = "replaceSelf",
+			name = "Replace my own fire max cape",
+			description = "If enabled, your own player will have their fire max cape replaced. You should burn that cape, too."
 	)
-	default boolean hideSelfIfWearing()
+	default boolean replaceSelf()
+	{
+		return true;
+	}
+
+	@ConfigItem(
+			keyName = "neverReplaceFriends",
+			name = "Never replace friends",
+			description = "If enabled, friends never have their fire max capes replaced. But do you really want to stay friends with them?"
+	)
+	default boolean neverReplaceFriends()
 	{
 		return false;
 	}
 
 	@ConfigItem(
-			keyName = "neverHideFriends",
-			name = "Never hide friends",
-			description = "If enabled, friends are never hidden even if they do wear the fire max cape. But do you really want to stay friends with them?"
+			keyName = "neverReplaceClanMembers",
+			name = "Never replace clan members",
+			description = "If enabled, clan members never have their fire max capes replaced. Better get out the ban hammer."
 	)
-	default boolean neverHideFriends()
+	default boolean neverReplaceClanMembers()
 	{
-		return true;
+		return false;
 	}
 
 	@ConfigItem(
-			keyName = "neverHideClanMembers",
-			name = "Never hide clan members",
-			description = "If enabled, clan members are never hidden even if they do wear the fire max cape. Better get out the ban hammer."
+			keyName = "neverReplaceFriendsChat",
+			name = "Never replace friends chat members",
+			description = "If enabled, members of your current friends chat never have their fire max capes replaced. Time to restrict your friends chat."
 	)
-	default boolean neverHideClanMembers()
+	default boolean neverReplaceFriendsChat()
 	{
-		return true;
-	}
-
-	@ConfigItem(
-			keyName = "neverHideFriendsChat",
-			name = "Never hide friends chat members",
-			description = "If enabled, members of your current friends chat are never hidden even if they do wear the fire max cape. Time to restrict your friends chat."
-	)
-	default boolean neverHideFriendsChat()
-	{
-		return true;
+		return false;
 	}
 }

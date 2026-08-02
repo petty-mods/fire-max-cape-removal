@@ -1,2 +1,2 @@
 # Fire Max Cape Removal
-Hides players wearing fire max capes
+Replaces fire max capes with regular fire capes.
